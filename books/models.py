@@ -26,6 +26,13 @@ class Book(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     slug = models.SlugField(max_length=100, unique=True)
     rating = models.FloatField(default=0)
+    category = models.ForeignKey(
+        Category,
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="books",
+    )
+    tags = models.ManyToManyField("books.Tag", related_name="books")
 
     class Meta:
         verbose_name = "книга"
