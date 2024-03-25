@@ -26,7 +26,7 @@
     from django.db.models import Count
     
     # Группировка категорий и подсчёт количества книг в них
-    ...
+    category_book_counts = ...
     
     # Вывод результатов
     for category in category_book_counts:
@@ -36,7 +36,7 @@
 2. Получить количество книг в каждом типе книги (твердая обложка, мягкая обложка, электронная книга).
     ```python
     # Группировка книг по типу и подсчет количества книг в каждой группе
-    book_counts_by_type = Book.objects.values('book_type').annotate(count=Count('id')).order_by('book_type')
+    book_counts_by_type = ...
     
     # Вывод результатов
     for grouped_book in book_counts_by_type:
