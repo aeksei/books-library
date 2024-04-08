@@ -32,7 +32,7 @@ class Book(models.Model):
         null=True,
         related_name="books",
     )
-    tags = models.ManyToManyField("books.Tag", related_name="books")
+    tags = models.ManyToManyField("books.Tag", related_name="books", blank=True)
 
     class Meta:
         verbose_name = "книга"
