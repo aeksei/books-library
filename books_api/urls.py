@@ -2,10 +2,12 @@ from django.urls import path
 
 from books_api import views
 
+app_name = "books_api"
+
 urlpatterns = [
     path(
         "books/",
-        views.ListCreateAPIView.as_view(),
+        views.ListCreateBookAPIView.as_view(),
         name="book-list"
     ),
     path(
