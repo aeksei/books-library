@@ -2,12 +2,14 @@ from rest_framework.views import APIView  # Вместо from django.views impor
 from rest_framework.request import Request
 from rest_framework.response import Response  # Вместо from django.http import JsonResponse
 from rest_framework import status  # Статус коды HTTP ответов
+from rest_framework.permissions import IsAuthenticated
 
 
 class MyAPIView(APIView):
     """
     Класс представления для обработки API запросов.
     """
+    ...  # TODO add IsAuthenticated permission
 
     # Обработчик GET запроса.
     def get(self, request: Request) -> Response:
